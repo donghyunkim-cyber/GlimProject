@@ -1,0 +1,26 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(vector<vector<int>> board, int k) {
+    int answer = 0;
+
+    int rows = board.size();       // 행의 개수
+    int cols = board[0].size();    // 열의 개수
+
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            if (i + j <= k)
+            {
+                answer = answer + board[i][j];
+            }
+            //printf("%d ", board[j][i]);
+        }
+        //printf("\n");
+    }
+
+    return answer;
+}
